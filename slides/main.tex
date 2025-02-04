@@ -1,0 +1,92 @@
+\documentclass[usepdftitle=false]{beamer}
+
+\usepackage{zhbeamer}
+\input{defs.tex}
+
+\title{Slide Template}
+\subtitle{Slide Template Subtitle}
+\author{Hao Zhu}
+\institute{Department of Computer Science\\University of Freiburg}
+\date{\today}
+
+\begin{document}
+\begin{frame}[plain]
+    \titlepage{}
+\end{frame}
+
+\begin{frame}{Outline}
+    \tableofcontents[subsectionstyle=hide, subsubsectionstyle=hide]
+\end{frame}
+
+\section{First section}
+\begin{frame}
+    \frametitle{Bulleted list}
+
+    \begin{itemize}\itemsep=12pt
+        \item XXX
+            \vspace*{0.5ex}
+            \begin{itemize}
+            \item XXX
+            \item XXX
+            \item XXX
+            \end{itemize}
+        \item XXX
+            \vspace*{0.5ex}
+            \begin{itemize}
+                \item XXX
+                \item XXX
+                \item XXX
+            \end{itemize}
+        \item XXX
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Numbered list}
+    
+    \begin{enumerate}\itemsep=12pt
+        \item XXX
+            \vspace*{0.5ex}
+            \begin{enumerate}
+            \item XXX
+            \item XXX
+            \item XXX
+            \end{enumerate}
+        \item XXX
+            \vspace*{0.5ex}
+            \begin{enumerate}
+                \item XXX
+                \item XXX
+                \item XXX
+            \end{enumerate}
+        \item XXX
+    \end{enumerate}
+\end{frame}
+
+\section{Second section}
+\begin{frame}
+    \frametitle{Figures}
+
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{example-image-a}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{example-image-a}
+        
+    \end{minipage}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Citation}
+    \framesubtitle{(Boyd and Vandenberghe~\cite{boyd2004convex})}
+
+\end{frame}
+
+\begin{frame}[plain]{Reference}
+    \footnotesize
+    \nocite{*}
+    \bibliography{refs}
+\end{frame}
+\end{document}
