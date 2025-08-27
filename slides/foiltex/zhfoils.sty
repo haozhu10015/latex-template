@@ -1,0 +1,51 @@
+% page layout
+\raggedright
+\addtolength\topmargin{-1.5cm}
+\addtolength\abovetitleskip{1.5cm}
+\setlength\authorauthorskip{1cm}
+\setlength\authordateskip{2cm}
+\addtolength\textheight{3cm}
+\setlength\foilheadskip{-0.5\baselineskip}
+\MyLogo{}
+
+% itemize environment
+\usepackage{enumitem}
+\setlist{topsep=0pt, partopsep=0pt, itemsep=0pt}
+
+% array stretch (for structuring optimization problems)
+\renewcommand{\arraystretch}{1.2}
+
+% bibliography
+\bibliographystyle{alpha}
+
+%%% commands %%%
+% some abbreviations
+\newcommand{\vfs}{\vspace*{\fill}}
+
+% header for section start pages
+\newcommand{\insertinfo}{}
+\newcommand{\info}[1]{\renewcommand{\insertinfo}{#1}}
+
+% new section
+\newcounter{section}
+\newcommand{\insertsection}{}
+\newcommand{\makesection}[1]{%
+    \newpage\pagestyle{foilheadings}%
+    \refstepcounter{section}%
+    \renewcommand{\insertsection}{#1}%
+    \Restriction{}%
+    \begin{flushright}\tiny\insertinfo\end{flushright}%
+    \begin{center}\Large\bfseries\arabic{section}.\ #1\end{center}%
+}
+
+% new foil
+\newcommand{\makefoil}[1]{%
+    \foilhead{#1}\pagestyle{foilheadings}%
+    \Restriction{\insertsection}%
+}
+
+% insert references
+\newcommand{\makereference}[2][\small]{%
+    \newpage\pagestyle{empty}%
+    {#1\bibliography{#2}}%
+}
