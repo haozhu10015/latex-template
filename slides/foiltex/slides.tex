@@ -1,0 +1,89 @@
+\documentclass[landscape]{foils}
+
+\usepackage{zhfoils}
+\input{defs}
+
+\title{Slide Template}
+\author{
+    Hao Zhu\\[10pt]
+    Department of Computer Science\\
+    University of Freiburg
+}
+\date{\today}
+\info{Slide Template --- Zhu}
+
+\begin{document}
+\maketitle
+
+\makesection{First section}
+\vfs
+\begin{itemize}\itemsep=20pt
+    \item bulleted list
+    \item numbered list
+\end{itemize}
+\vfs
+
+\makefoil{Bulleted list}
+\begin{itemize}\itemsep=12pt
+    \item XXX
+        \vspace*{0.5ex}
+        \begin{itemize}
+        \item XXX
+        \item XXX
+        \item XXX
+        \end{itemize}
+    \item XXX
+        \vspace*{0.5ex}
+        \begin{itemize}
+            \item XXX
+            \item XXX
+            \item XXX
+        \end{itemize}
+    \item XXX
+\end{itemize}
+
+\makefoil{Numbered list}
+\begin{enumerate}\itemsep=12pt
+    \item XXX
+        \vspace*{0.5ex}
+        \begin{enumerate}
+        \item XXX
+        \item XXX
+        \item XXX
+        \end{enumerate}
+    \item XXX
+        \vspace*{0.5ex}
+        \begin{enumerate}
+            \item XXX
+            \item XXX
+            \item XXX
+        \end{enumerate}
+    \item XXX
+\end{enumerate}
+
+\makesection{Second section}
+\vfs
+\begin{itemize}\itemsep=20pt
+    \item figures
+    \item citation
+\end{itemize}
+\vfs
+
+\makefoil{Figures}
+\vfs
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{example-image-a}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{example-image-a}
+\end{minipage}
+\vfs
+
+\makefoil{Citation}
+(Boyd and Vandenberghe~\cite{boyd2004convex})
+
+% references
+\makereference{refs}
+\end{document}
