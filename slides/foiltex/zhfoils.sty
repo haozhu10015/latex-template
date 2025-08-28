@@ -5,7 +5,7 @@
 \setlength\authorauthorskip{1cm}
 \setlength\authordateskip{2cm}
 \addtolength\textheight{3cm}
-\setlength\foilheadskip{-0.5\baselineskip}
+\setlength\foilheadskip{-\baselineskip}
 \MyLogo{}
 
 % itemize environment
@@ -20,7 +20,7 @@
 
 %%% commands %%%
 % some abbreviations
-\newcommand{\vfs}{\vspace*{\fill}}
+\newcommand{\vf}{\vspace*{\fill}}
 
 % header for section start pages
 \newcommand{\insertinfo}{}
@@ -40,7 +40,7 @@
 
 % new foil
 \newcommand{\makefoil}[1]{%
-    \foilhead{#1}\pagestyle{foilheadings}%
+    \newpage\foilhead{#1}\pagestyle{foilheadings}%
     \Restriction{\insertsection}%
 }
 
