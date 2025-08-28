@@ -41,7 +41,7 @@
 % new foil
 \newcommand{\makefoil}[1]{%
     \newpage\foilhead{#1}\pagestyle{foilheadings}%
-    \Restriction{\insertsection}%
+    \Restriction{{\def\\{ }\insertsection}}%
 }
 
 % insert references
