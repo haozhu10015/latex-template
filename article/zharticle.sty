@@ -1,4 +1,13 @@
-\usepackage[margin=1.5in]{geometry}
+% page layout
+\newif\if@screen
+\@screenfalse
+\DeclareOption{screen}{\@screentrue}
+\ProcessOptions\relax
+\if@screen
+  \RequirePackage[screen]{geometry}
+\else
+  \RequirePackage[margin=1.5in]{geometry}
+\fi
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
