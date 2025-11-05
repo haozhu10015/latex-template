@@ -15,18 +15,16 @@
 
 % summary box
 \newenvironment{summary}{%
-    \par\raggedleft%
-    \begin{tcolorbox}[
-        blanker,
-        breakable,
-        width=\dimexpr\textwidth-1.5em
-    ]
-        \hrule\vspace*{0.5\baselineskip}%
-        \small\parindent0pt\parskip5pt
-        {\sffamily\bfseries Summary\ }%
+    \begin{list}{}{%
+		\setlength{\rightmargin}{0\linewidth}%
+		\setlength{\leftmargin}{.05\linewidth}
+    }%
+		\small%
+		\item[]{\setlength{\parskip}{0ex}\hrulefill\par\nopagebreak%
+        {\sffamily\bfseries Summary\ }}
 }{%
-    \vspace*{0.5\baselineskip}\hrule%
-    \end{tcolorbox}
+    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}
+    \end{list}
 }
 
 % example box
@@ -34,18 +32,16 @@
 \renewcommand{\theexample}{\thechapter.\arabic{example}}
 \newenvironment{example}{%
     \refstepcounter{example}%
-    \par\raggedleft%
-    \begin{tcolorbox}[
-        blanker,
-        breakable,
-        width=\dimexpr\textwidth-1.5em
-    ]
-        \hrule\vspace*{0.5\baselineskip}%
-        \small\parindent0pt\parskip5pt
-        {\sffamily\bfseries Example~\theexample\ }%
+    \begin{list}{}{%
+		\setlength{\rightmargin}{0\linewidth}%
+		\setlength{\leftmargin}{.05\linewidth}
+    }%
+		\small%
+		\item[]{\setlength{\parskip}{0ex}\hrulefill\par\nopagebreak%
+        {\sffamily\bfseries Example~\theexample\ }}
 }{%
-    \vspace*{0.5\baselineskip}\hrule%
-    \end{tcolorbox}
+    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}
+    \end{list}
 }
 
 % remark box
@@ -53,18 +49,16 @@
 \renewcommand{\theremark}{\thechapter.\arabic{remark}}
 \newenvironment{remark}{%
     \refstepcounter{remark}%
-    \par\raggedleft%
-    \begin{tcolorbox}[
-        blanker,
-        breakable,
-        width=\dimexpr\textwidth-1.5em
-    ]
-        \hrule\vspace*{0.5\baselineskip}%
-        \small\parindent0pt\parskip5pt
-        {\sffamily\bfseries Remark~\theremark\ }%
+    \begin{list}{}{%
+		\setlength{\rightmargin}{0\linewidth}%
+		\setlength{\leftmargin}{.05\linewidth}
+    }%
+		\small%
+		\item[]{\setlength{\parskip}{0ex}\hrulefill\par\nopagebreak%
+        {\sffamily\bfseries Remark~\theremark\ }}
 }{%
-    \vspace*{0.5\baselineskip}\hrule%
-    \end{tcolorbox}
+    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}
+    \end{list}
 }
 
 % algorithm box
@@ -72,18 +66,16 @@
 \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
 \newenvironment{algorithm}{%
     \refstepcounter{algorithm}%
-    \par\raggedleft%
-    \begin{tcolorbox}[
-        blanker,
-        breakable,
-        width=\dimexpr\textwidth-1.5em
-    ]
-        \hrule\vspace*{0.5\baselineskip}%
-        \small\parindent0pt
-        {\sffamily\bfseries Algorithm~\thealgorithm\ }%
+    \begin{list}{}{%
+		\setlength{\rightmargin}{0\linewidth}%
+		\setlength{\leftmargin}{.05\linewidth}
+    }%
+		\small%
+		\item[]{\setlength{\parskip}{0ex}\hrulefill\par\nopagebreak%
+        {\sffamily\bfseries Algorithm~\thealgorithm\ }}
 }{%
-    \vspace*{0.5\baselineskip}\hrule%
-    \end{tcolorbox}
+    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}
+    \end{list}
 }
 
 \usepackage{imakeidx}
