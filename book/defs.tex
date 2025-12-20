@@ -1,5 +1,3 @@
-\usepackage{fancybox}
-\usepackage[most]{tcolorbox}
 \usepackage{amsmath}
 \allowdisplaybreaks%
 \usepackage{amssymb}
@@ -13,17 +11,22 @@
 \nobibliography*
 \newcommand{\zhpub}[1]{\begin{NoHyper}\bibentry{#1}\end{NoHyper}}
 
+% index
+\usepackage{imakeidx}
+\makeindex%
+
+%%% custom environments %%%
 % summary box
 \newenvironment{summary}{%
     \begin{list}{}{%
 		\setlength{\rightmargin}{0\linewidth}%
-		\setlength{\leftmargin}{.05\linewidth}
+		\setlength{\leftmargin}{.05\linewidth}%
     }%
 		\small%
 		\item[]{\setlength{\parskip}{0ex}\hrulefill\par\nopagebreak%
-        {\sffamily\bfseries Summary\ }}
+        {\sffamily\bfseries Summary\@}}%
 }{%
-    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}
+    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}%
     \end{list}
 }
 
@@ -34,13 +37,13 @@
     \refstepcounter{example}%
     \begin{list}{}{%
 		\setlength{\rightmargin}{0\linewidth}%
-		\setlength{\leftmargin}{.05\linewidth}
+		\setlength{\leftmargin}{.05\linewidth}%
     }%
 		\small%
 		\item[]{\setlength{\parskip}{0ex}\hrulefill\par\nopagebreak%
-        {\sffamily\bfseries Example~\theexample\ }}
+        {\sffamily\bfseries Example~\theexample\@}}%
 }{%
-    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}
+    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}%
     \end{list}
 }
 
@@ -51,36 +54,61 @@
     \refstepcounter{remark}%
     \begin{list}{}{%
 		\setlength{\rightmargin}{0\linewidth}%
-		\setlength{\leftmargin}{.05\linewidth}
+		\setlength{\leftmargin}{.05\linewidth}%
     }%
 		\small%
 		\item[]{\setlength{\parskip}{0ex}\hrulefill\par\nopagebreak%
-        {\sffamily\bfseries Remark~\theremark\ }}
+        {\sffamily\bfseries Remark~\theremark\@}}%
 }{%
-    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}
+    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}%
     \end{list}
 }
 
 % algorithm box
 \newcounter{algorithm}[chapter]
 \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
-\newenvironment{algorithm}{%
+\newenvironment{algorithm}[1]{%
     \refstepcounter{algorithm}%
     \begin{list}{}{%
 		\setlength{\rightmargin}{0\linewidth}%
-		\setlength{\leftmargin}{.05\linewidth}
+		\setlength{\leftmargin}{.05\linewidth}%
     }%
 		\small%
 		\item[]{\setlength{\parskip}{0ex}\hrulefill\par\nopagebreak%
-        {\sffamily\bfseries Algorithm~\thealgorithm\ }}
+        {\sffamily\bfseries Algorithm~\thealgorithm}\ {\scshape#1}}%
+        \begin{itemize}[label={}, leftmargin=0pt]%
 }{%
-    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}
+    \end{itemize}%
+    \vspace{-\parskip}
+    {\setlength{\parskip}{-1ex}\nopagebreak\par\hrulefill}%
     \end{list}
 }
 
-\usepackage{imakeidx}
-\indexsetup{headers={\sffamily\bfseries Index}{\sffamily\bfseries Index}}
-\makeindex%
+% bibliography box
+\newenvironment{bibnote}{%
+    \begin{itemize}[
+      leftmargin=0pt,%
+      label={},%
+      parsep=0pt,%
+    ]\small%
+}{%
+    \end{itemize}
+}
+
+% exercise box
+\newcounter{exercise}[chapter]
+\newenvironment{exercise}{%
+    \begin{enumerate}[
+      leftmargin=0pt,%
+      label=\thechapter.\arabic*,%
+      font=\sffamily\bfseries,%
+      parsep=0pt%
+    ]\setcounter{enumi}{\value{exercise}}\small%
+}{%
+    \setcounter{exercise}{\value{enumi}}%
+    \end{enumerate}
+}
+%%%%%%
 
 % commands
 \newcommand{\ones}{{\bf 1{}}}  % vector with all components one

@@ -12,10 +12,10 @@
 \pagestyle{fancy}
 \fancyheadoffset[leh,roh]{0.6in}
 \fancyhf{}
-\renewcommand{\chaptermark}[1]{\markboth{\sffamily\bfseries\thechapter\quad#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\sffamily\bfseries\thesection\quad#1}}
-\fancyhead[RE]{\leftmark}
-\fancyhead[LO]{\rightmark}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\quad#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad#1}}
+\fancyhead[RE]{\sffamily\bfseries\nouppercase{\leftmark}}
+\fancyhead[LO]{\sffamily\bfseries\nouppercase{\rightmark}}
 \fancyhead[LE,RO]{\sffamily\bfseries\thepage}
 % no header and footer for chapter title page
 \usepackage{emptypage}
