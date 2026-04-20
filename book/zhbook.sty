@@ -1,4 +1,14 @@
-\usepackage[letterpaper,top=1.8in,bottom=1.4in,inner=1.4in,outer=2.1in]{geometry}
+% page layout
+\newif\if@print
+\@printfalse
+\DeclareOption{print}{\@printtrue}
+\ProcessOptions\relax
+\if@print
+  \RequirePackage[letterpaper,top=1.8in,bottom=1.4in,inner=1.9in,outer=1.6in]{geometry}
+  \RequirePackage[width=189mm, height=246mm, center]{crop}
+\else
+  \RequirePackage[letterpaper,top=1.8in,bottom=1.4in,inner=1.4in,outer=2.1in]{geometry}
+\fi
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
